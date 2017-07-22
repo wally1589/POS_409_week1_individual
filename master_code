@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace week1Individual_TipCalculator
+{
+    public partial class TipCalculator : Form
+    {
+        public TipCalculator()
+        {
+            InitializeComponent();
+        }
+
+        private void txt_Subtotal_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+        private void txt_Subtotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
+        }
+
+        private void btn_calculate_Click(object sender, EventArgs e)
+        {
+          
+            const double tip20 = .20;
+            const double tip15 = .15;
+            double subtotal;
+            double total1;
+            double total2;
+        
+                subtotal = Convert.ToDouble(txt_Subtotal.Text);
+                
+                total1 = (subtotal * tip20) + subtotal;
+                total2 = (subtotal * tip15) + subtotal;
+
+                lbl_15tip.Text = (total2.ToString("C"));
+                lbl_20tip.Text = (total1.ToString("C"));
+            
+            
+        }
+
+    }
+}
